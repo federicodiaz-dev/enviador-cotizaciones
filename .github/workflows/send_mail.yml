@@ -4,7 +4,7 @@ on:
   schedule:
     # Ejecutar a las 10:00 y 19:42 (UTC−3). Ajusta si necesitas otra zona.
     - cron:  '0 16 * * *'   # 10:00 ART → 13:00 UTC
-    - cron:  '30 23 * * *'   # 19:00 ART → 22:00 UTC
+    - cron:  '0 1 * * *'   # 19:00 ART → 22:00 UTC
   workflow_dispatch:
 
 jobs:
