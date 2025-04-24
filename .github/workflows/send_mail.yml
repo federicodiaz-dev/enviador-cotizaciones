@@ -1,0 +1,25 @@
+name: 📧 Enviar cotización y noticias
+
+on:
+  schedule:
+    # Ejecutar a las 10:00 y 19:42 (UTC−3). Ajusta si necesitas otra zona.
+    - cron:  '0 16 * * *'   # 10:00 ART → 13:00 UTC
+    - cron:  '13 23 * * *'   # 19:00 ART → 22:00 UTC
+
+jobs:
+  send_mail:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Instalar dependencias
+        run: pip install requests feedparser
+      - name: Ejecutar enviador de mails
+        env:
+          SENDER_EMAIL:      ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD:   ${{ secrets.SENDER_PASSWORD }}
+          RECIPIENT_EMAIL:   ${{ secrets.RECIPIENT_EMAIL }}
+        run: python enviador_mail_directo.py
