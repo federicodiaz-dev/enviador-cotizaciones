@@ -5,7 +5,7 @@ from email.message import EmailMessage
 from datetime import datetime
 
 # --- CONFIGURACIÓN ---
-SENDER_EMAIL      = "fedediaz008@gmail.com"
+SENDER_EMAIL      = "federico.diaz.2004@gmail.com"
 # Guarda en tu sistema: export GMAIL_APP_PASSWORD="tu_app_password"
 SENDER_PASSWORD   = "zsgh otnf tpqc zslc"
 RECIPIENT_EMAIL   = "fedediaz008@gmail.com"
